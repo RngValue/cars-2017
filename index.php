@@ -17,7 +17,7 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
     <title>Latest cars in 2017</title>
 </head>
 
-<body class="mt-4">
+<body class="mt-4 bg-dark text-light">
     <h1>Latest cars in 2017!</h1>
     <form action="/" method="get">
         <div class="mb-3">
@@ -38,7 +38,7 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
             <div id="makeHelp" class="form-text">Car brand name</div>
             <div class="invalid-feedback">Please select a valid option.</div>
         </div>
-        <button class="btn btn-primary">Query</button>
+        <button class="btn btn bg-dark bg-gradient text-light border-secondary">Query</button>
     </form>
     <hr>
     <ul class="list-group">

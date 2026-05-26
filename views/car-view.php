@@ -13,14 +13,10 @@ class CarView extends Car {
         }
     }
 
-    function show_cars_by_brand(string $make) {
-        foreach($this->get_cars_by_brand($make, 15) as $currentBrand) {
-            echo '<li class="list-group-item">'
-            . $currentBrand['make'] . " "
-            . $currentBrand['model'] . " "
-            . $currentBrand['year'] . " | "
-            . $currentBrand['fuel']
-            . '</li>';
+    function show_cars_by_brand(string $make, int $limit = 15) {
+        foreach($this->get_cars_by_brand($make, $limit) as $currentBrand) {
+            extract($currentBrand);
+            include('views/components/car-item.php');
         }
     }
 }
