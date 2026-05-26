@@ -14,7 +14,9 @@
             <?php if (str_contains($category, 'High-Performance')) : ?>
                 <span class="badge rounded-pill bg-danger bg-gradient"><?php echo $category ?></span>
             <?php else : ?>
+                <?php if ($category != 'N/A') : ?>
                 <span class="badge rounded-pill bg-info bg-gradient"><?php echo $category ?></span>
+                <?php endif; ?>
             <?php endif; ?>
         </p>
     </div>

@@ -16,7 +16,7 @@ class CarView extends Car {
     function show_cars_by_brand(string $make, int $limit = 15) {
         foreach($this->get_cars_by_brand($make, $limit) as $currentBrand) {
             extract($currentBrand);
-            include('views/components/car-item.php');
+            include('components/car-item.php');
         }
     }
 }

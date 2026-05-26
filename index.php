@@ -14,11 +14,14 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
 		rel="stylesheet"
 		href="/public/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>Latest cars in 2017</title>
+    <title>Cars 2017</title>
 </head>
 
-<body class="mt-4 bg-dark text-light">
-    <h1>Latest cars in 2017!</h1>
+<body class="container-fluid bg-dark text-light">
+    <main>
+        <?php include('components/navbar.php'); ?>
+    </main>
+    <br>
     <form action="/" method="get">
         <div class="mb-3">
             <label for="make" class="form-label">Select Brand</label>
@@ -35,18 +38,20 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
                 $carView->show_brand_options($currentBrand);
             ?>
             </select>
-            <div id="makeHelp" class="form-text">Car brand name</div>
+            <div id="makeHelp" class="form-text text-secondary">Car brand name</div>
             <div class="invalid-feedback">Please select a valid option.</div>
         </div>
-        <button class="btn btn bg-dark bg-gradient text-light border-secondary">Query</button>
+        <button style="background: purple" class="btn bg-gradient text-light rounded-pill">Query</button>
     </form>
     <hr>
-    <ul class="list-group">
-    <?php
-        require_once('views/car-view.php');
-        $carView = new CarView();
-        $carView->show_cars_by_brand($currentBrand);
-    ?>
-    </ul>
+    <div>
+        <ul class="list-group">
+        <?php
+            require_once('views/car-view.php');
+            $carView = new CarView();
+            $carView->show_cars_by_brand($currentBrand);
+        ?>
+        </ul>
+    </div>
 </body>
 </html>
