@@ -1,4 +1,4 @@
-<li style="--bs-bg-opacity: .5; backdrop-filter: blur(1px);" class="list-group-item bg-dark border border-secondary text-light rounded p-4">
+<li style="--bs-bg-opacity: .5; backdrop-filter: blur(1px); overflow: hidden;" class="list-group-item bg-dark border border-secondary text-light rounded p-4">
     <div class="card-body d-flex flex-column">
         <h5 class="card-title"><?php echo $model ?></h5>
         <h6 class="card-subtitle mb-2 text-secondary"><?php echo $make ?> <?php echo $year ?></h6>

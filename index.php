@@ -16,7 +16,10 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
 </head>
 
 <body class="text-bg-dark">
-    <?php include('components/navbar.php'); ?>
+    <?php
+        include('components/navbar.php');
+        include('components/glowy-asshole.php');
+    ?>
     <main>
         <br>
         <form action="/" method="get">
@@ -47,7 +50,7 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
             <?php
                 require_once('views/car-view.php');
                 $carView = new CarView();
-                $carView->show_cars_by_brand($currentBrand);
+                $carView->show_cars_by_brand($currentBrand, 40);
             ?>
             </ul>
         </div>
@@ -55,14 +58,5 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
     </main>
 </body>
 
-<!-- <script>
-    const move = document.getElementById("glowyAsshole");
-    document.body.onpointermove = event => {
-        const { clientX, clientY } = event;
-        move.animate({
-            marginLeft: `${clientX}px`,
-            marginTop: `${clientY}px`
-        }, { duration: 1000, fill: "forwards" })
-    }
-</script> -->
+
 </html>

@@ -12,10 +12,12 @@
     main {
         margin-bottom: var(--navbar_height);
     }
+    #glowyAsshole {
+        opacity: 0;
+    }
 }
 
 body {
-    /* max-width: 1280px; */
     margin: 0;
     margin-left: auto;
     margin-right: auto;
@@ -35,15 +37,20 @@ a.btn:hover, button:hover {
     filter: brightness(1.2);
 }
 
+.toast-container {
+    z-index: 99 !important;
+}
+
 #glowyAsshole {
+    margin-top: 50vh;
+    margin-left: 50vw;
     position: fixed;
-    margin-top: 50%;
-    margin-left: 50%;
-    z-index: -99;
-    -webkit-box-shadow:0px 0px 105px 45px var(--bs-info);
-    -moz-box-shadow: 0px 0px 105px 45px var(--bs-info);
-    box-shadow: 0px 0px 105px 45px var(--bs-info);
-    height: 0px;
-    aspect-ratio: 1;
+    z-index: 1000;
+    height: 12px;
+    width: 12px;
+    --bs-bg-opacity: 0.2;
+    backdrop-filter: invert(1);
+    border-radius: 50%;
+    pointer-events: none;
     transform: translate(-50%, -50%);
 }
