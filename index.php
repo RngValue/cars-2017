@@ -15,42 +15,44 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
     <title>Cars 2017</title>
 </head>
 
-<body class="container-fluid text-bg-dark">
-    <main class="mb-4">
-        <?php include('components/navbar.php'); ?>
-    </main>
-    <form action="/" method="get">
-        <div class="mb-3">
-            <label for="make" class="form-label">Select Brand</label>
-            <select 
-                class="form-select text-bg-dark border-secondary" 
-                id="make" 
-                name="make"
-                required
-                aria-describedby="makeHelp"
-            >
+<body class="text-bg-dark">
+    <?php include('components/navbar.php'); ?>
+    <main>
+        <br>
+        <form action="/" method="get">
+            <div class="mb-3">
+                <label for="make" class="form-label">Select Brand</label>
+                <select 
+                    class="form-select text-bg-dark border-secondary" 
+                    id="make" 
+                    name="make"
+                    required
+                    aria-describedby="makeHelp"
+                >
+                <?php
+                    require_once('views/car-view.php');
+                    $carView = new CarView();
+                    $carView->show_brand_options($currentBrand);
+                ?>
+                </select>
+                <div id="makeHelp" class="form-text text-secondary">Car brand name</div>
+                <div class="invalid-feedback">Please select a valid option.</div>
+            </div>
+            <button class="btn bg-warning text-dark">Query</button>
+        </form>
+        <hr class="hr">
+        <h2 class="pt-4 pb-4">Results for <?php echo $currentBrand ?></h2>
+        <div>
+            <ul class="list-group gap-4">
             <?php
                 require_once('views/car-view.php');
                 $carView = new CarView();
-                $carView->show_brand_options($currentBrand);
+                $carView->show_cars_by_brand($currentBrand);
             ?>
-            </select>
-            <div id="makeHelp" class="form-text text-secondary">Car brand name</div>
-            <div class="invalid-feedback">Please select a valid option.</div>
+            </ul>
         </div>
-        <button class="btn bg-warning text-dark">Query</button>
-    </form>
-    <hr class="hr">
-    <h2 class="pt-4 pb-4">Results for <?php echo $currentBrand ?></h2>
-    <div>
-        <ul class="list-group gap-4">
-        <?php
-            require_once('views/car-view.php');
-            $carView = new CarView();
-            $carView->show_cars_by_brand($currentBrand);
-        ?>
-        </ul>
-    </div>
+        <br>
+    </main>
 </body>
 
 <!-- <script>
