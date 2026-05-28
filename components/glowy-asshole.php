@@ -2,7 +2,7 @@
 
 <script>
     const move = document.getElementById('glowyAsshole');
-    
+
     document.body.onpointermove = event => {
         const { clientX, clientY } = event;
         move.animate({

@@ -37,7 +37,7 @@ a.btn:hover, button:hover {
     filter: brightness(1.2);
 }
 
-.toast-container {
+.toast-container .modal-content {
     z-index: 99 !important;
 }
 
@@ -45,7 +45,7 @@ a.btn:hover, button:hover {
     margin-top: 50vh;
     margin-left: 50vw;
     position: fixed;
-    z-index: 1000;
+    z-index: 100000;
     height: 12px;
     width: 12px;
     --bs-bg-opacity: 0.2;

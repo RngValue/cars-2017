@@ -10,6 +10,7 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <title>Cars 2017</title>
@@ -21,6 +22,7 @@ if (isset($_GET['make']) and $_GET['make']) $currentBrand = $_GET['make'];
         include('components/glowy-asshole.php');
     ?>
     <main>
+        <?php include('components/car-modal.php') ?>
         <br>
         <form action="/" method="get">
             <div class="mb-3">
